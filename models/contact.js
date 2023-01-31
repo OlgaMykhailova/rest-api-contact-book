@@ -11,7 +11,6 @@ const contactSchema = new Schema(
     },
     number: {
       type: String,
-      unique: true,
       required: [true, "Set number for contact"],
     },
     owner: {
