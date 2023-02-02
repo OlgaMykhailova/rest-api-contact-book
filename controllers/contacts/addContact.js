@@ -4,7 +4,7 @@ const createError = require("http-errors");
 const addContact = async (req, res, next) => {
   const { _id } = req.user;
   const { name, number } = req.body;
-  const candidate = Contact.findOne({ number, owner: _id });
+  const candidate = await Contact.findOne({ number, owner: _id });
   if (candidate) {
     throw createError(
       409,
